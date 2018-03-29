@@ -8,7 +8,6 @@ public class EnemyMovement : MonoBehaviour {
 
 	void Start ()
     {
-        StartCoroutine(PrintAllWaypoints());
 
     }
 	
