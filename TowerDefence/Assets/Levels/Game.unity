@@ -296,10 +296,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114998316582530420, guid: ff9ea01a00cc5ec4b98e93c3ffc480f4,
+    - target: {fileID: 102017908945126764, guid: ff9ea01a00cc5ec4b98e93c3ffc480f4,
         type: 2}
-      propertyPath: gridSize
-      value: 10
+      propertyPath: m_Text
+      value: 0,0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff9ea01a00cc5ec4b98e93c3ffc480f4, type: 2}
