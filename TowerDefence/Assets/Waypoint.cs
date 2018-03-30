@@ -18,4 +18,10 @@ public class Waypoint : MonoBehaviour {
     {
         return new Vector3Int(gridPos.x = Mathf.RoundToInt(transform.position.x / GRID_SIZE), 0, Mathf.RoundToInt(transform.position.z / GRID_SIZE));                         
     }
+
+    public void SetTopColor(Color color)
+    {
+        MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
+        topMeshRenderer.material.color = color;
+    }
 }

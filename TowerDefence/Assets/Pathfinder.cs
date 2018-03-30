@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pathfinder : MonoBehaviour {
+public class Pathfinder : MonoBehaviour
+{
+
+    [SerializeField] Waypoint startWaypoint;
+    [SerializeField] Waypoint endWaypoint;
 
     Dictionary<Vector3Int, Waypoint> grid = new Dictionary<Vector3Int, Waypoint>();
    
 	void Start ()
     {
+        SetStartAndEndColors();
         LoadBlocks();
 	}
 
@@ -29,11 +34,11 @@ public class Pathfinder : MonoBehaviour {
                 grid.Add(gridPos, waypoint);
             }
         }
-        print(grid.Count);
     }
 
-    void Update ()
+    private void SetStartAndEndColors()
     {
-		
-	}
+        startWaypoint.SetTopColor(Color.green);
+        endWaypoint.SetTopColor(Color.red);
+    }
 }

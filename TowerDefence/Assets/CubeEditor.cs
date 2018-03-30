@@ -7,6 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(Waypoint))]
 public class CubeEditor : MonoBehaviour
 {
+
+
     Waypoint waypoint;
 
 
@@ -20,6 +22,7 @@ public class CubeEditor : MonoBehaviour
         SnapToGrid();
         UpdateLabel();
     }
+
 
     private void SnapToGrid()
     {
