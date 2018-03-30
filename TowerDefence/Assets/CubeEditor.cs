@@ -8,9 +8,7 @@ using UnityEngine;
 public class CubeEditor : MonoBehaviour
 {
 
-
     Waypoint waypoint;
-
 
     private void Awake()
     {
@@ -28,9 +26,9 @@ public class CubeEditor : MonoBehaviour
     {
         int gridSize = waypoint.GetGridSize();
         transform.position = new Vector3(
-            waypoint.GetGridPos().x * gridSize, 
-            0f, 
-            waypoint.GetGridPos().z * gridSize
+            waypoint.GetGridPos().x * gridSize,
+            0f,
+            waypoint.GetGridPos().y * gridSize       
             );
     }
 
@@ -39,7 +37,7 @@ public class CubeEditor : MonoBehaviour
         int gridSize = waypoint.GetGridSize();
 
         TextMesh textMesh = GetComponentInChildren<TextMesh>();
-        string labelText = waypoint.GetGridPos().x  + "," + waypoint.GetGridPos().z;
+        string labelText = waypoint.GetGridPos().x  + "," + waypoint.GetGridPos().y;
         textMesh.text = labelText;
         gameObject.name = labelText;
     }

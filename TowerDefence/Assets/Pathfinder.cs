@@ -9,13 +9,32 @@ public class Pathfinder : MonoBehaviour
     [SerializeField] Waypoint startWaypoint;
     [SerializeField] Waypoint endWaypoint;
 
-    Dictionary<Vector3Int, Waypoint> grid = new Dictionary<Vector3Int, Waypoint>();
-   
+    Dictionary<Vector2Int, Waypoint> grid = new Dictionary<Vector2Int, Waypoint>();
+    Vector2Int[] directions =
+    {
+        Vector2Int.up,
+        Vector2Int.right,
+        Vector2Int.down,
+        Vector2Int.left
+    };
+
+
 	void Start ()
     {
         SetStartAndEndColors();
         LoadBlocks();
+        ExploreNeighbours();
 	}
+
+    private void ExploreNeighbours()
+    {
+        foreach(Vector2Int direction in directions)
+        {
+            Vector2Int explorationCoordinates = direction + startWaypoint.GetGridPos();
+            print("Exploring " + explorationCoordinates);
+            grid[explorationCoordinates].SetTopColor(Color.blue);
+        }
+    }
 
     private void LoadBlocks()
     {
