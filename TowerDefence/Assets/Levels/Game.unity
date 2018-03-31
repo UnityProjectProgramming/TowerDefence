@@ -173,12 +173,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4073590202615078, guid: ff9ea01a00cc5ec4b98e93c3ffc480f4,
     type: 2}
   m_PrefabInternal: {fileID: 27249625}
---- !u!114 &50455623 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114636706157757024, guid: ff9ea01a00cc5ec4b98e93c3ffc480f4,
-    type: 2}
-  m_PrefabInternal: {fileID: 978465279}
-  m_Script: {fileID: 11500000, guid: 0fb65d6ccd6deaf44bd901b090dbb827, type: 3}
 --- !u!1 &98609126
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +959,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1290279217}
   m_Script: {fileID: 11500000, guid: 0fb65d6ccd6deaf44bd901b090dbb827, type: 3}
+--- !u!114 &1602356485 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114636706157757024, guid: ff9ea01a00cc5ec4b98e93c3ffc480f4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1164768367}
+  m_Script: {fileID: 11500000, guid: 0fb65d6ccd6deaf44bd901b090dbb827, type: 3}
 --- !u!1001 &1828292084
 Prefab:
   m_ObjectHideFlags: 0
@@ -1083,5 +1083,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baac0887e7c9b214eb73aa0dd116c47a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startWaypoint: {fileID: 50455623}
-  endWaypoint: {fileID: 1290279219}
+  startWaypoint: {fileID: 1290279219}
+  endWaypoint: {fileID: 1602356485}
