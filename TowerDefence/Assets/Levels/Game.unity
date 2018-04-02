@@ -959,11 +959,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1290279217}
   m_Script: {fileID: 11500000, guid: 0fb65d6ccd6deaf44bd901b090dbb827, type: 3}
---- !u!114 &1602356485 stripped
+--- !u!114 &1555507608 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114636706157757024, guid: ff9ea01a00cc5ec4b98e93c3ffc480f4,
     type: 2}
-  m_PrefabInternal: {fileID: 1164768367}
+  m_PrefabInternal: {fileID: 27249625}
   m_Script: {fileID: 11500000, guid: 0fb65d6ccd6deaf44bd901b090dbb827, type: 3}
 --- !u!1001 &1828292084
 Prefab:
@@ -1084,4 +1084,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startWaypoint: {fileID: 1290279219}
-  endWaypoint: {fileID: 1602356485}
+  endWaypoint: {fileID: 1555507608}

@@ -13,6 +13,7 @@ public class Pathfinder : MonoBehaviour
     Queue<Waypoint> queue = new Queue<Waypoint>();
     bool isRunning = true;
     Waypoint searchCenter;
+    List<Waypoint> path = new List<Waypoint>();
 
     Vector2Int[] directions =
     {
@@ -22,16 +23,34 @@ public class Pathfinder : MonoBehaviour
         Vector2Int.left
     };
 
-
-	void Start ()
+    public List<Waypoint> GetPath()
     {
         SetStartAndEndColors();
         LoadBlocks();
-        Pathfind();
-        //ExploreNeighbours();
-	}
+        BreadthFirstSearch();
+        CreatePath();
 
-    private void Pathfind()
+        return path;
+    }
+
+
+    private void CreatePath()
+    {
+        path.Add(endWaypoint);
+        Waypoint previous = endWaypoint.exploredFrom;
+        while(previous != startWaypoint)
+        {
+            // add intermediate waypoints
+            path.Add(previous);
+            previous = previous.exploredFrom;
+        }
+        //add the startWaypoint
+        path.Add(startWaypoint);
+        // reverse the list
+        path.Reverse();
+    }
+
+    private void BreadthFirstSearch()
     {
         queue.Enqueue(startWaypoint);
 
@@ -42,15 +61,12 @@ public class Pathfinder : MonoBehaviour
             ExploreNeighbours();
             searchCenter.isExplored = true;
         }
-
-        print("Finished Pathfinding?");
     }
 
     private void HaltIfEndPointFound()
     {
         if (searchCenter == endWaypoint)
         {
-            print("Goal Found");
             isRunning = false;
         }
     }
@@ -61,13 +77,9 @@ public class Pathfinder : MonoBehaviour
         foreach(Vector2Int direction in directions)
         {
             Vector2Int neighbourCoordinates = direction + searchCenter.GetGridPos();
-            try
+            if(grid.ContainsKey(neighbourCoordinates))
             {
                 QueueNewNeighbours(neighbourCoordinates);
-            }
-            catch (Exception e)
-            {
-                print(e.Message);
             }
         }
     }
